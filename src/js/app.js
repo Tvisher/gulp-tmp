@@ -49,9 +49,6 @@ document.body.addEventListener('click', (e) => {
         document.querySelector('[data-header-menu]').classList.toggle('active');
         document.body.classList.toggle('hidden');
     }
-    if (target.closest('.fullscreen-slider__desc')) {
-        target.closest('.fullscreen-slider__desc').classList.add('open');
-    }
 });
 
 // Маска на номера телефона
