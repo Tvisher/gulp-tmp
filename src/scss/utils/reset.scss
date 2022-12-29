@@ -1,182 +1,78 @@
-// Default
-html,
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
 body,
-div,
-span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
+ul[class],
+ol[class],
 li,
-fieldset,
-form,
-label,
-legend,
-caption,
-article,
-aside,
-canvas,
-details,
-embed,
 figure,
 figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+blockquote,
+dl,
+dd {
   margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  display: block;
 }
 
-// Links
-a {
-  text-decoration: none;
-  &:active,
-  &:hover {
-    outline: 0;
-  }
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-// List
-ul,
-li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
 }
 
-// Headlines
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  line-height: 100%;
-  font-weight: normal;
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-// Default
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-:focus {
-  outline: 0;
-}
-
-img,
-audio,
-video {
+/* Упрощаем работу с изображениями */
+img {
   max-width: 100%;
-  height: auto;
-}
-audio,
-canvas,
-iframe,
-video,
-img,
-svg {
-  vertical-align: middle;
-}
-iframe {
-  border: 0;
-}
-img,
-svg {
   display: block;
 }
 
-// From
-textarea {
-  resize: vertical; /*remove the resize handle on the bottom right*/
-  overflow: auto;
-  vertical-align: top;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  font-family: inherit;
-}
-input,
-textarea,
-select,
-button {
-  padding: 0;
-  outline: none;
-  border: none;
-  font-size: 100%;
-  margin: 0;
-  font-family: inherit;
-}
-button,
-input {
-  line-height: normal;
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
 }
 
-// Table
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
-td,
-th {
-  padding: 0;
-  text-align: left;
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
