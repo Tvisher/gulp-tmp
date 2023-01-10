@@ -45,36 +45,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-
-  &.hidden {
-    overflow: hidden;
-    touch-action: none;
-    -ms-touch-action: none;
-  }
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-ul,
-li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 *::selection {
@@ -90,10 +66,6 @@ li {
   margin: 0 auto;
   padding: 0 20px;
 
-  @media screen and (max-width: $smDesktopWidth) {
-    // max-width: $tableWidth;
-  }
-
   @media screen and (max-width: $tableWidth) {
     max-width: 98%;
   }
@@ -105,16 +77,6 @@ li {
   @media screen and (max-width: $smPhoneWidth) {
     padding: 0 10px;
   }
-
-  &.small {
-    max-width: 936px;
-  }
 }
 
 @import "./common.scss";
-
-.section-title {
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 140%;
-}
